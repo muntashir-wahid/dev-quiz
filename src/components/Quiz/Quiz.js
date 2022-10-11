@@ -12,8 +12,7 @@ const Quiz = ({ quizData, questionNumber, onSubmitAnswer }) => {
   return (
     <article>
       <h3 className="text-2xl mb-3">
-        {questionNumber + 1}
-        {question}
+        {questionNumber + 1}.{question.slice(3, -4)}
       </h3>
       <form>
         {options.map((option, i) => (
@@ -21,6 +20,7 @@ const Quiz = ({ quizData, questionNumber, onSubmitAnswer }) => {
             key={i}
             option={option}
             id={id}
+            index={i}
             onSeclectOption={selectOptionHandler}
           />
         ))}

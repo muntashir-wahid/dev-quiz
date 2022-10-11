@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Quiz from "../../components/Quiz/Quiz";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Quizzes = () => {
-  const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
+  // const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
+  const notify = (isCorrect) =>
+    toast(isCorrect ? "Correct answer" : "Wrong Answer");
   const { data: quizData } = useLoaderData();
   const { name, questions } = quizData;
 
@@ -12,9 +16,9 @@ const Quizzes = () => {
     const quiz = questions.find((el) => el.id === id);
 
     if (selectedOption === quiz.correctAnswer) {
-      setIsAnswerCorrect(true);
+      notify(true);
     } else {
-      setIsAnswerCorrect(false);
+      notify(false);
     }
   };
 
@@ -31,6 +35,7 @@ const Quizzes = () => {
           />
         ))}
       </div>
+      <ToastContainer />
     </section>
   );
 };
