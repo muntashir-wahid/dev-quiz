@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRightLong } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -15,7 +17,8 @@ const QuizTopic = ({ quizTopic }) => {
         <h3 className="text-2xl">{name} Quizes</h3>
         <p>You have {total} quizes</p>
         <button onClick={showQuizesHandler} className="bg-green-600 px-5 py-3">
-          Start Quize
+          <span className="mr-2">Start Quiz</span>
+          <FontAwesomeIcon icon={faRightLong} />
         </button>
       </div>
     </article>

@@ -22,10 +22,10 @@ const Quiz = ({
 
   return (
     <article className="relative">
-      <h3 className="text-2xl mb-3">
+      <h3 className="text-2xl mb-3 pl-4 pr-8">
         {questionNumber + 1}.{question.slice(3, -4)}
       </h3>
-      <form>
+      <form className="px-6">
         {options.map((option, i) => (
           <QuizOption
             key={i}
