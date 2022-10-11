@@ -2,9 +2,9 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <section className="text-white p-6">
+    <section className="text-white p-6 mt-10" style={{ minHeight: "55rem" }}>
       <h1 className="text-4xl text-center mb-12">Welcome to My Blog Page</h1>
-      <article className="mb-6">
+      <article className="mb-10">
         <h2 className="text-2xl mb-4">
           What is the purpose of <strong>React Router</strong>?
         </h2>
@@ -25,7 +25,7 @@ const Blog = () => {
         </p>
       </article>
 
-      <article className="mb-6">
+      <article className="mb-10">
         <h2 className="text-2xl mb-4">
           How does <strong>Contex API</strong> work?
         </h2>

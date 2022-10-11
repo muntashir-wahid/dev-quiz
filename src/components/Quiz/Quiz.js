@@ -21,7 +21,7 @@ const Quiz = ({
   };
 
   return (
-    <article className="relative">
+    <article className="relative mb-6">
       <h3 className="text-2xl mb-3 pl-4 pr-8">
         {questionNumber + 1}.{question.slice(3, -4)}
       </h3>
@@ -39,6 +39,7 @@ const Quiz = ({
       <button
         className="absolute right-0 top-0"
         onClick={displayCorrectAnswerHandler}
+        title="View the right answer"
       >
         <FontAwesomeIcon icon={faEye} />
       </button>

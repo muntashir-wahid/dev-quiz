@@ -14,7 +14,7 @@ const ErrorPage = () => {
         <h1 className="text-4xl">
           {error.statusText || error.message}.{error.status}
         </h1>
-        <button onClick={goBackHandler} className="bg-green-400 px-4 py-2">
+        <button onClick={goBackHandler} className="bg-purple-500 px-4 py-2">
           Go Back
         </button>
       </div>

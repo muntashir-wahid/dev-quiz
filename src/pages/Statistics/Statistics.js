@@ -11,10 +11,9 @@ import {
 
 const Statistics = () => {
   const { data: quizData } = useLoaderData();
-  console.log(quizData);
   return (
     <section className="flex h-screen justify-center items-center">
-      <ResponsiveContainer width="60%" height={400}>
+      <ResponsiveContainer width="80%" height={400}>
         <BarChart width={150} height={40} data={quizData}>
           <XAxis dataKey="name" />
           <YAxis />
