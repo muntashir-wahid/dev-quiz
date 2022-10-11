@@ -1,16 +1,27 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import QuizOption from "./QuizOption";
 
-const Quiz = ({ quizData, questionNumber, onSubmitAnswer }) => {
-  const { id, options, question } = quizData;
+const Quiz = ({
+  quizData,
+  questionNumber,
+  onSubmitAnswer,
+  onDisplayCorrectAnswer,
+}) => {
+  const { id, options, question, correctAnswer } = quizData;
 
   const selectOptionHandler = (selectedOption, id) => {
     const data = { selectedOption, id };
     onSubmitAnswer(data);
   };
 
+  const displayCorrectAnswerHandler = () => {
+    onDisplayCorrectAnswer(correctAnswer);
+  };
+
   return (
-    <article>
+    <article className="relative">
       <h3 className="text-2xl mb-3">
         {questionNumber + 1}.{question.slice(3, -4)}
       </h3>
@@ -25,6 +36,12 @@ const Quiz = ({ quizData, questionNumber, onSubmitAnswer }) => {
           />
         ))}
       </form>
+      <button
+        className="absolute right-0 top-0"
+        onClick={displayCorrectAnswerHandler}
+      >
+        <FontAwesomeIcon icon={faEye} />
+      </button>
     </article>
   );
 };

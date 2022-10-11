@@ -8,6 +8,8 @@ const Quizzes = () => {
   // const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
   const notify = (isCorrect) =>
     toast(isCorrect ? "Correct answer" : "Wrong Answer");
+
+  const notifyCorrectAnswer = (correctAnswer) => toast(correctAnswer);
   const { data: quizData } = useLoaderData();
   const { name, questions } = quizData;
 
@@ -22,6 +24,10 @@ const Quizzes = () => {
     }
   };
 
+  const displayCorrectAnsweHander = (correctAnswer) => {
+    notifyCorrectAnswer(correctAnswer);
+  };
+
   return (
     <section className="bg-purple-200 p-10">
       <h1 className="text-4xl text-center mb-12">All {name} Quizzes</h1>
@@ -32,6 +38,7 @@ const Quizzes = () => {
             quizData={question}
             questionNumber={index}
             onSubmitAnswer={submittedOptionHandler}
+            onDisplayCorrectAnswer={displayCorrectAnsweHander}
           />
         ))}
       </div>
