@@ -9,8 +9,8 @@ const QuizTopic = ({ quizTopic }) => {
     navigate(`/quiz/${id}`);
   };
   return (
-    <article className="bg-slate-400 p-3 rounded-xl">
-      <img src={imgSrc} alt={`${name}`} className="w-full mb-4" />
+    <article className="bg-purple-200 p-3 rounded-xl flex gap-10">
+      <img src={imgSrc} alt={`${name}`} className="max-h-28 rounded-xl" />
       <div className="space-y-1.5 ">
         <h3 className="text-2xl">{name} Quizes</h3>
         <p>You have {total} quizes</p>

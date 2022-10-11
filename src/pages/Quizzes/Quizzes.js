@@ -1,25 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Quiz from "../../components/Quiz/Quiz";
 
 const Quizzes = () => {
+  const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
   const { data: quizData } = useLoaderData();
   const { name, questions } = quizData;
-  // console.log(questions);
+
   const submittedOptionHandler = (data) => {
     const { selectedOption, id } = data;
     const quiz = questions.find((el) => el.id === id);
-    console.log(quiz.correctAnswer);
-    console.log(selectedOption);
+
     if (selectedOption === quiz.correctAnswer) {
-      console.log("Right answer");
+      setIsAnswerCorrect(true);
     } else {
-      console.log("Wrong answer");
+      setIsAnswerCorrect(false);
     }
   };
 
   return (
-    <section>
+    <section className="bg-purple-200 p-10">
       <h1 className="text-4xl text-center mb-12">All {name} Quizzes</h1>
       <div>
         {questions.map((question, index) => (
