@@ -17,7 +17,7 @@ const QuizOption = ({ option, onSeclectOption, id, index }) => {
         onClick={quizAnswerHandler}
         id={`${id + index}`}
       />
-      <label htmlFor={`${id + index}`} className="mb-4 p-2 mr-3">
+      <label htmlFor={`${id + index}`} className="inline-block mb-1 p-2 ">
         {option}
       </label>
     </div>

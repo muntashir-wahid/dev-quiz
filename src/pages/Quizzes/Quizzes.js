@@ -6,10 +6,45 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Quizzes = () => {
   // const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
-  const notify = (isCorrect) =>
-    toast(isCorrect ? "Correct answer" : "Wrong Answer");
+  const notify = (isCorrect) => {
+    // toast(isCorrect ? "Correct answer" : "Wrong Answer");
+    if (isCorrect) {
+      toast.success("Correct Answer", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else {
+      toast.warn("Wrong Answer", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+  };
 
-  const notifyCorrectAnswer = (correctAnswer) => toast(correctAnswer);
+  const notifyCorrectAnswer = (correctAnswer) => {
+    toast.info(correctAnswer, {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
   const { data: quizData } = useLoaderData();
   const { name, questions } = quizData;
 

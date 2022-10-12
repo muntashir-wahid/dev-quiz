@@ -11,11 +11,11 @@ const QuizTopic = ({ quizTopic }) => {
     navigate(`/quiz/${id}`);
   };
   return (
-    <article className="bg-purple-200 p-3 rounded-xl flex gap-10">
+    <article className="bg-purple-200 p-3 rounded-xl flex items-center sm:gap-10 gap-5 flex-col sm:flex-row">
       <img src={imgSrc} alt={`${name}`} className="max-h-28 rounded-xl" />
-      <div className="space-y-1.5 ">
+      <div className="space-y-1.5 flex flex-col items-center sm:items-start">
         <h3 className="text-2xl">{name} Quizzes</h3>
-        <p>You have {total} quizes</p>
+        <p>You have {total} quizzes</p>
         <button onClick={showQuizesHandler} className="bg-purple-500 px-5 py-3">
           <span className="mr-2">Start Quiz</span>
           <FontAwesomeIcon icon={faRightLong} />

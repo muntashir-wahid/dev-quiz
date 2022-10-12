@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Navigation() {
   const [navbar, setNavbar] = useState(false);
@@ -58,13 +58,34 @@ function Navigation() {
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
               <li className="text-white hover:text-indigo-200">
-                <Link to="/home">Home</Link>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "text-indigo-200" : "text-white"
+                  }
+                  to="/home"
+                >
+                  Home
+                </NavLink>
               </li>
               <li className="text-white hover:text-indigo-200">
-                <Link to="/statistics">Statistics</Link>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "text-indigo-200" : "text-white"
+                  }
+                  to="/statistics"
+                >
+                  Statistics
+                </NavLink>
               </li>
               <li className="text-white hover:text-indigo-200">
-                <Link to="/blog">Blog</Link>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "text-indigo-200" : "text-white"
+                  }
+                  to="/blog"
+                >
+                  Blog
+                </NavLink>
               </li>
             </ul>
           </div>
