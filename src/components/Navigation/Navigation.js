@@ -60,7 +60,7 @@ function Navigation() {
               <li className="text-white hover:text-indigo-200">
                 <NavLink
                   className={({ isActive }) =>
-                    isActive ? "text-indigo-200" : "text-white"
+                    isActive ? "text-indigo-200" : undefined
                   }
                   to="/home"
                 >
@@ -70,7 +70,7 @@ function Navigation() {
               <li className="text-white hover:text-indigo-200">
                 <NavLink
                   className={({ isActive }) =>
-                    isActive ? "text-indigo-200" : "text-white"
+                    isActive ? "text-indigo-200" : undefined
                   }
                   to="/statistics"
                 >
@@ -80,7 +80,7 @@ function Navigation() {
               <li className="text-white hover:text-indigo-200">
                 <NavLink
                   className={({ isActive }) =>
-                    isActive ? "text-indigo-200" : "text-white"
+                    isActive ? "text-indigo-200" : undefined
                   }
                   to="/blog"
                 >
